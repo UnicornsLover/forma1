@@ -51,6 +51,7 @@
     <Compile Include="Form1Form.Designer.cs">
       <DependentUpon>Form1Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modell\Racer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1Form.resx">
