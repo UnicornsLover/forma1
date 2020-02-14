@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Forma1.Repository
+namespace Forma1projekt.Repository
 {
     /// <summary>
     /// A F1 nyilvántartó osztály, összes csapat a F1-be

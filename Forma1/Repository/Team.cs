@@ -1,11 +1,11 @@
-﻿using Forma1.Modell;
+﻿using Forma1projekt.Modell;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Forma1.Repository
+namespace Forma1projekt.Repository
 {
     /// <summary>
     /// A Forma1-ben szereplő csapatok
