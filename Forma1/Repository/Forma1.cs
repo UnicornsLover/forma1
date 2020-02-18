@@ -8,6 +8,7 @@ namespace Forma1projekt.Repository
 {
     /// <summary>
     /// A F1 nyilvántartó osztály, összes csapat a F1-be
+    /// Szolgáltatást nyújt a service rétegnek
     /// </summary>
     class Forma1
     {
