@@ -1,6 +1,8 @@
-﻿using Forma1projekt.Service;
+﻿using Forma1projekt.Exceptionmy;
+using Forma1projekt.Service;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +15,15 @@ namespace Forma1projekt.Controller
 
         public void addTeamToF1(string teamName)
         {
-            teamService.addTeam(teamName);
+            
+            try
+            {
+                teamService.addTeam(teamName);
+            }
+            catch (TeamServiceException tse)
+            {
+                Debug.WriteLine(tse.Message);
+            }
         }
 
         /// <summary>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Forma1projekt.Exception;
+using Forma1projekt.Exceptionmy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,13 +25,31 @@ namespace Forma1projekt.Repository
         }
 
         /// <summary>
+        /// A Teamet hozzáadja a csapatok listájához
+        /// </summary>
+        /// <param name="A cspat listájához hozzáadott csapat"></param>
+        public void add(Team t)
+        {
+            if (teams == null)
+                throw new F1Exception("Végzetes hiba a team nincs példányosítva.");
+            else
+                teams.Add(t);
+        }
+
+        /// <summary>
         /// Létrehoz eg csapatoto egy név alapján
         /// </summary>
         /// <param name="Csapat név"></param>
         public void Add( string name)
         {
-            Team t = new Team(name);
-            teams.Add(t);
+            if (teams == null)
+                throw new F1Exception("Végzetes hiba a team nincs példányosítva.");
+            else
+            {
+                Team t = new Team(name);
+                teams.Add(t);
+            }
+            
         }
     }
 }
