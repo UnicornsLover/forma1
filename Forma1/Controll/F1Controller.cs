@@ -1,4 +1,5 @@
 ﻿using Forma1projekt.Exceptionmy;
+using Forma1projekt.Repository;
 using Forma1projekt.Service;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,47 @@ namespace Forma1projekt.Controller
             {
                 Debug.WriteLine(tse.Message);
             }
+        }
+
+        public List<string> getTeamNames()
+        {
+            try
+            {
+                List<Team> teams = teamService.getTeams();
+                return TeamListToTeamNameList(teams);
+            }
+            catch (TeamServiceException tse)
+            {
+                Debug.WriteLine(tse.Message);
+                List<string> teamNames = new List<string>();
+                return teamNames;
+            }
+        }
+
+        public void deleteTeam(string teamNameToDelete)
+        {
+            try
+            {
+                if (teamService.IsExsist(teamToDelete))
+                {
+                    throw...;
+                }
+                teamService.deleteTeam(teamNameToDelete);
+            }
+            catch (TeamServiceException tse)
+            {
+                Debug.WriteLine(tse.Message);
+            }
+        }
+
+        private List<string> TeamListToTeamNameList(List<Team> teams)
+        {
+            List<string> teamNames = new List<string>();
+            foreach (Team t in teams)
+            {
+                teamNames.Add(t.getTeamName());  
+            }
+            return teamNames;
         }
 
         /// <summary>

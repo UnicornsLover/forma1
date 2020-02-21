@@ -16,10 +16,12 @@ namespace Forma1projekt.Repository
         /// Csapat neve
         /// </summary>
         private string name;
+
         /// <summary>
         /// Csapat versenyzői
         /// </summary>
         List<Racer> racers;
+
         /// <summary>
         /// A cspat nével jöhet létre
         /// </summary>
@@ -28,6 +30,15 @@ namespace Forma1projekt.Repository
         {
             this.name = name;
             racers = new List<Racer>();
+        }
+
+        /// <summary>
+        /// Visszaadja a Csapat nevét
+        /// </summary>
+        /// <returns></returns>
+        public string getTeamName()
+        {
+            return name;
         }
     }
 }

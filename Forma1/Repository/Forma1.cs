@@ -1,5 +1,4 @@
-﻿using Forma1projekt.Exception;
-using Forma1projekt.Exceptionmy;
+﻿using Forma1projekt.Exceptionmy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +33,18 @@ namespace Forma1projekt.Repository
                 throw new F1Exception("Végzetes hiba a team nincs példányosítva.");
             else
                 teams.Add(t);
+        }
+
+        public List<Team> getTeams()
+        {
+            if (teams == null)
+            {
+                throw new F1Exception("Végzetes hiba a team nincs példányosítva.");
+            }  
+            else
+            {
+                return teams;
+            }
         }
 
         /// <summary>
