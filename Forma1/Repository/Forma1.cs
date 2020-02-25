@@ -48,6 +48,40 @@ namespace Forma1projekt.Repository
         }
 
         /// <summary>
+        /// Ellenőrzi, hogy a csapat neve létezik e már a listába
+        /// </summary>
+        /// <param name="teamName">Keresett csapat név</param>
+        /// <returns> true = ha létezik, false = ha nem létezik</returns>
+        public bool IsExsist(string teamName)
+        {
+            if (teams == null)
+            {
+                throw new F1Exception("Végzetes hiba a team nincs példányosítva.");
+            }
+            else
+            {
+                foreach (Team t in teams)
+                {
+                    if (t.getTeamName() == teamName)
+                    {
+                        return true;
+                    }  
+                }
+                return false;
+            }
+        }
+
+        internal int getNumberOfRacers(string teamNameToDelete)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void delete(string teamNameToDelete)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// Létrehoz eg csapatoto egy név alapján
         /// </summary>
         /// <param name="Csapat név"></param>
