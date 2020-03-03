@@ -91,6 +91,7 @@ namespace Forma1projekt.Repository
                     {
                         try
                         {
+                            
                             return t.getNumberOfRacers();
                         }
                         catch (TeamException te)
@@ -102,6 +103,26 @@ namespace Forma1projekt.Repository
                     }
                 }
                 throw new F1Exception(teamName+" csapat név nem létezik!!!!!!!!!!!!!");
+            }
+        }
+
+        public void update(string oldTeamName, string newTeamName)
+        {
+            if (teams == null)
+            {
+                throw new F1Exception("Végzetes hiba a team nincs példányosítva.");
+            }
+            else
+            {
+                foreach (Team t in teams)
+                {
+                    if (t.getTeamName() == oldTeamName)
+                    {
+                        t.update(newTeamName);
+                        return;
+                    }
+                }
+                throw new F1Exception(oldTeamName + " csapat nem található, nem lehet módosítani");
             }
         }
 
