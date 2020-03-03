@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forma1projekt.Exceptionmy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,10 +34,9 @@ namespace Forma1projekt
                 listBoxTeam.DataSource = null;
                 listBoxTeam.DataSource = f1c.getTeamNames();
             }
-            catch (Exception)
+            catch (ControllerException ce)
             {
-
-                throw;
+                ;
             }
             
         }
